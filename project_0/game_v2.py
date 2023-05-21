@@ -15,7 +15,7 @@ def random_predict(number: int = 1) -> int:
         int: Число попыток
     """
     
-    
+    # С помощью цикла разбиваем поиск на 5 блоков
     for i in range(0, 81, 20):
 
         if i < number <= (i+20):
