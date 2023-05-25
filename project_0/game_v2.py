@@ -15,18 +15,19 @@ def random_predict(number: int = 1) -> int:
         int: Число попыток
     """
     
-    # С помощью цикла разбиваем поиск на 5 блоков
-    for i in range(0, 81, 20):
-
-        if i < number <= (i+20):
-            count = 0
-            while True:
-                count += 1
-                predict_number = np.random.randint((i+1), (i+21))  # предполагаемое число
-                if number == predict_number:
-                    break  # выход из цикла если угадали
-            break # выход из цикла for если угадали
-        else: continue
+    minimum = 1
+    maximum = 101
+            
+    count = 0
+    while True:
+        count += 1
+        predict_number = (minimum + maximum) // 2  # предполагаемое число
+        if predict_number > number:
+            maximum = predict_number
+        elif predict_number < number:
+            minimum = predict_number
+        else:
+            break
     
     return count
 
