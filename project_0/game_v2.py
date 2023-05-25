@@ -14,11 +14,12 @@ def random_predict(number: int = 1) -> int:
     Returns:
         int: Число попыток
     """
-    
+
+    # Воспользуемся алгоритмом бинарного поиска.
     minimum = 1
     maximum = 101
-            
     count = 0
+    
     while True:
         count += 1
         predict_number = (minimum + maximum) // 2  # предполагаемое число
